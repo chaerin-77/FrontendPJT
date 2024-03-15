@@ -88,7 +88,7 @@
             <img src="../img/calendar.png" alt="" width="25px" height="25px" />
             <p class="date">2024년 3월 15일</p>
           </div>
-          <form action="" class="selectoption">
+          <form action="" class="selectoption" onsubmit="GetList(event)">
             <div class="selectDest">
               <select
                 name=""
@@ -130,7 +130,7 @@
             <input
               type="submit"
               class="selectBtn"
-              onclick="alert('클릭!')"
+              
               value="검색"
             />
           </form>
@@ -312,6 +312,6 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="../js/public_data_api.js"></script>
+    <script type="text/javascript" src="../js/public_data_api.js"></script>    
   </body>
 </html>
