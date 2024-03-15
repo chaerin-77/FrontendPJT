@@ -1,0 +1,135 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: "Pretendard-Regular";
+  font-optical-sizing: auto;
+}
+
+.navSearch {
+  align-items: center;
+  display: inline-block;
+  width: 450px;
+  height: 40px;
+  border: 1px solid #545454;
+  border-radius: 30px;
+  padding: 1% 8%;
+  font-size: 16px;
+}
+
+.navSearchText {
+  display: inline-block;
+  border: none;
+  line-height: 16px;
+  vertical-align: middle;
+}
+
+input:focus {
+  outline: none;
+}
+
+.navSearchBtn {
+  background: url("../img/search.png") no-repeat;
+  border: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-left: 50px;
+  vertical-align: middle;
+}
+
+/* login modal */
+.member_body {
+  text-align: center;
+  margin: 0 18%;
+}
+
+.member_login_input {
+  border: 1px solid #545454;
+  border-radius: 20px;
+  margin-top: 12%;
+  height: 50px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.member_login_input > input {
+  border: none;
+  display: inline-block;
+  height: 40px;
+}
+
+.member_login_btn {
+  justify-content: space-around;
+  display: flex;
+  margin: 15% 10% 10% 10%;
+}
+
+.member_login_btn1 {
+  border: none;
+  border-radius: 15px;
+  background-color: #ff914d;
+  color: white;
+  padding: 5% 8%;
+}
+
+.member_login_btn2 {
+  border: 1px solid #545454;
+  border-radius: 15px;
+  padding: 5% 8%;
+}
+
+/*------------ main -------------*/
+/* slide */
+.MEMORAVEL {
+  color: #ff914d;
+}
+
+/* writedown */
+.writedown {
+  padding: 5% 10%;
+  margin-top: 5%;
+}
+
+.titletext {
+  font-size: 20px;
+}
+
+/* trip-info */
+.trip-info-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 3% 5%;
+  margin-bottom: 3%;
+  vertical-align: middle;
+}
+
+.trip-info-div {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.trip-info-text {
+  margin-left: 30px;
+  display: inline-block;
+}
+
+.trip-info-btn {
+  border: none;
+}
+
+/* footer */
+.site-footer {
+  background-color: #545454;
+  color: white;
+  padding: 5%;
+}
