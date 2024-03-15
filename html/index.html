@@ -73,7 +73,7 @@
       style="background-color: white !important"
     >
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../html/index.html">
           <img
             src="../img/logo.png"
             alt="Logo"
@@ -119,10 +119,10 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">회원가입</a>
+              <a class="nav-link" href="../html/login.html">회원가입</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">마이페이지</a>
+              <a class="nav-link" href="../html/mypage.html">마이페이지</a>
             </li>
           </ul>
         </div>
@@ -172,7 +172,13 @@
                 <p>남는건 사진밖에 없어요.</p>
                 <p><b class="MEMORAVEL">MEMORAVEL </b>으로 여행계획을 세우고</p>
                 <p>잊히지 않을 기억을 남겨 보세요.</p>
-                <button type="button" class="slideBtn">시작하기</button>
+                <button
+                  type="button"
+                  class="slideBtn"
+                  onClick="location.href='../html/triplist.html'"
+                >
+                  시작하기
+                </button>
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="4000">
@@ -184,7 +190,13 @@
               <div class="slideText">
                 <p>이웃들의 <b class="MEMORAVEL">MEMORY</b>를 들여다 보고</p>
                 <p>다음 여행에 대한 힌트를 얻으세요.</p>
-                <button type="button" class="slideBtn">시작하기</button>
+                <button
+                  type="button"
+                  class="slideBtn"
+                  onClick="location.href='../html/triplist.html'"
+                >
+                  시작하기
+                </button>
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="4000">
@@ -196,7 +208,13 @@
               <div class="slideText">
                 <p>나의 <b class="MEMORAVEL">MEMORY</b>를 이웃들과 공유하고</p>
                 <p>instagram에 게시하세요.</p>
-                <button type="button" class="slideBtn">시작하기</button>
+                <button
+                  type="button"
+                  class="slideBtn"
+                  onClick="location.href='../html/triplist.html'"
+                >
+                  시작하기
+                </button>
               </div>
             </div>
           </div>
@@ -285,7 +303,11 @@
                 <option value="">쇼핑</option>
               </select>
             </div>
-            <button type="submit" class="selectBtn">
+            <button
+              type="submit"
+              class="selectBtn"
+              onClick="location.href='../html/mkplan.html'"
+            >
               <img src="../img/pencil.png" alt="" height="15px" />
               <span>여행 기록 작성하기</span>
             </button>
@@ -298,13 +320,13 @@
               <p class="trip_title">경주</p>
             </div>
             <div class="col card1">
-              <p class="trip_title">경주</p>
+              <p class="trip_title">대전</p>
             </div>
             <div class="col card1">
-              <p class="trip_title">경주</p>
+              <p class="trip_title">전주</p>
             </div>
             <div class="col card1">
-              <p class="trip_title">경주</p>
+              <p class="trip_title">부산</p>
             </div>
           </div>
         </div>

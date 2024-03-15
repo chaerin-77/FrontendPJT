@@ -26,7 +26,7 @@
       style="background-color: white !important"
     >
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../html/index.html">
           <img
             src="../img/logo.png"
             alt="Logo"
@@ -54,11 +54,7 @@
                 placeholder="관광지를 검색해보세요"
                 style="width: 80%"
               />
-              <input
-                type="button"
-                class="navSearchBtn"
-                onclick="alert('클릭!')"
-              />
+              <input type="button" class="navSearchBtn" />
             </div>
           </ul>
           <ul class="navbar-nav ms-auto me-2">
@@ -66,10 +62,10 @@
               <a class="nav-link" href="#">로그인</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">회원가입</a>
+              <a class="nav-link" href="../html/login.html">회원가입</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">마이페이지</a>
+              <a class="nav-link" href="../html/mypage.html">마이페이지</a>
             </li>
           </ul>
         </div>
@@ -100,7 +96,8 @@
             ><input type="email" id="user-email" />
           </li>
         </ul>
-        <input type="submit" value="회원가입" />
+        <input type="submit" value="회원가입" onclick="alert('가입되었습니다.');
+        location.href='../html/index.html'"" />
       </div>
     </main>
   </body>
