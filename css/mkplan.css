@@ -52,52 +52,133 @@ input:focus {
   font-size: 20px;
 }
 
-.selectoption {
-  border: 1px solid #f1f1f1;
-  border-radius: 100px;
-  box-shadow: 4px 4px 10px 2px#c0c0c0;
+.SelectedDate {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 5% 8%;
+  justify-content: center;
+  vertical-align: middle;
   margin-top: 5%;
+}
+
+.date {
+  display: flex;
+  margin-left: 2%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #545454;
+}
+
+.selectoption {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2% 0;
   vertical-align: middle;
 }
 
 .selectDest {
   display: flex;
-  border-right: 2px solid #545454;
-  padding-right: 30px;
+  border: 1px solid #545454;
+  border-radius: 20px;
+  padding: 1%;
   vertical-align: middle;
-}
-
-.selectDate {
-  display: flex;
-  width: 150px;
-  vertical-align: middle;
+  margin-right: 3%;
 }
 
 .selectCategory {
-  border-left: 2px solid #545454;
-  padding-left: 30px;
   display: flex;
+  display: flex;
+  border: 1px solid #545454;
+  border-radius: 20px;
+  padding: 1%;
   vertical-align: middle;
+  margin-right: 3%;
+}
+
+.selectSearch {
+  display: flex;
+  border: 1px solid #545454;
+  border-radius: 20px;
+  padding: 1% 2%;
+  vertical-align: middle;
+  margin-right: 3%;
+}
+
+.selectSearchText {
+  border: none;
 }
 
 .selectBtn {
   height: 50px;
-  width: 180px;
   border: none;
   color: white;
   background-color: #ff914d;
-  border-radius: 30px;
+  border-radius: 20px;
+  padding: 1% 2%;
   vertical-align: middle;
 }
 
 /* kakaomap */
-.kakaomap div#map {
-  margin: 0 auto;
+.kakaomap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#map {
   border: 1px solid #f1f1f1;
-  border-radius: 100px;
+  border-radius: 20px;
   box-shadow: 4px 4px 10px 2px#c0c0c0;
+}
+
+/* trip-info */
+.list {
+  width: 50%;
+  margin-bottom: 5%;
+  height: 500px;
+  overflow: scroll;
+}
+
+.trip-info-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 3% 5%;
+  margin-bottom: 3%;
+  vertical-align: middle;
+}
+
+.trip-info-div {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.trip-info-text {
+  margin-left: 30px;
+  display: inline-block;
+}
+
+.trip-info-btn {
+  border: none;
+}
+
+.accordion-body > input {
+  width: 100%;
+}
+
+/* 제출 버튼 */
+.submitWrite {
+  margin-top: 5%;
+  text-align: center;
+}
+
+/* footer */
+.site-footer {
+  background-color: #545454;
+  color: white;
+  padding: 5%;
+  margin-top: 10%;
 }
