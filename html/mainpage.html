@@ -105,7 +105,11 @@
             ></button>
           </div>
           <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="4000" style="position: relative;">
+            <div
+              class="carousel-item active"
+              data-bs-interval="4000"
+              style="position: relative"
+            >
               <img
                 src="../img/wallpaper/airplane_sunset.png"
                 class="d-block w-100"
@@ -113,7 +117,7 @@
               />
               <div class="slideText">
                 <p>남는건 사진밖에 없어요.</p>
-                <strong class="MEMORAVEL">MEMORAVEL </strong>으로 여행계획을 세우고</strong>
+                <p><b class="MEMORAVEL">MEMORAVEL </b>으로 여행계획을 세우고</p>
                 <p>잊히지 않을 기억을 남겨 보세요.</p>
                 <button type="button" class="slideBtn">시작하기</button>
               </div>
@@ -125,7 +129,7 @@
                 alt="..."
               />
               <div class="slideText">
-                <p>이웃들의 <strong class="MEMORAVEL">MEMORY</strong>를 들여다 보고</p>
+                <p>이웃들의 <b class="MEMORAVEL">MEMORY</b>를 들여다 보고</p>
                 <p>다음 여행에 대한 힌트를 얻으세요.</p>
                 <button type="button" class="slideBtn">시작하기</button>
               </div>
@@ -137,10 +141,10 @@
                 alt="..."
               />
               <div class="slideText">
-                <p>나의 <strong class="MEMORAVEL">MEMORY</strong>를 이웃들과 공유하고 </p>
+                <p>나의 <b class="MEMORAVEL">MEMORY</b>를 이웃들과 공유하고</p>
                 <p>instagram에 게시하세요.</p>
                 <button type="button" class="slideBtn">시작하기</button>
-              </div>  
+              </div>
             </div>
           </div>
           <button
@@ -161,6 +165,78 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
+        </div>
+      </section>
+      <section class="container">
+        <div class="writedown">
+          <p class="titletext">
+            <b class="MEMORAVEL">여행 기록</b>을 바로 작성해보세요!
+          </p>
+          <form action="" class="selectoption">
+            <div class="selectDest">
+              <img
+                src="../img/map.png"
+                alt=""
+                width="25px"
+                height="25px"
+                style="margin-top: 10px"
+              />
+              <select
+                name=""
+                id="dest"
+                style="border: none; margin-left: 10px; color: #545454"
+              >
+                <option value="" selected>여행지가 어디었나요?</option>
+                <option value="">서울</option>
+                <option value="">경기도</option>
+                <option value="">강원도</option>
+                <option value="">충청도</option>
+                <option value="">전라도</option>
+                <option value="">경상도</option>
+                <option value="">제주도</option>
+              </select>
+            </div>
+            <div class="selectDate">
+              <img
+                src="../img/calendar.png"
+                alt=""
+                width="25px"
+                height="25px"
+                style="margin-top: 10px"
+              />
+              <input
+                type="text"
+                placeholder="여행일 선택"
+                onfocus="(this.type='date')"
+                onblur="(this.type='text')"
+                style="border: none; margin-left: 10px; color: #545454"
+              />
+            </div>
+            <div class="selectCategory">
+              <img
+                src="../img/destination.png"
+                alt=""
+                width="25px"
+                height="25px"
+                style="margin-top: 10px"
+              />
+              <select
+                name=""
+                id=""
+                style="border: none; margin-left: 10px; color: #545454"
+              >
+                <option value="" selected>관광지 타입 선택</option>
+                <option value="">전체</option>
+                <option value="">숙박</option>
+                <option value="">식당</option>
+                <option value="">카페</option>
+              </select>
+            </div>
+            <button type="submit" class="selectBtn">
+              <img src="../img/pencil.png" alt="" height="20px" />
+              <span>여행 기록 작성하기</span>
+            </button>
+          </form>
         </div>
       </section>
     </main>
