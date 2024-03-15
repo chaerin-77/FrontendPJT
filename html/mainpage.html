@@ -12,9 +12,12 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- navbar -->
@@ -51,7 +54,11 @@
                 placeholder="관광지를 검색해보세요"
                 style="width: 80%"
               />
-              <input type="button" class="navSearchBtn" onclick="alert('클릭!')">
+              <input
+                type="button"
+                class="navSearchBtn"
+                onclick="alert('클릭!')"
+              />
             </div>
           </ul>
           <ul class="navbar-nav ms-auto me-2">
@@ -70,50 +77,90 @@
     </header>
     <main>
       <section class="wallpaper">
-        <div class="slider">
-          <input type="radio" name="slide" id="slide1" checked />
-          <input type="radio" name="slide" id="slide2" />
-          <input type="radio" name="slide" id="slide3" />
-
-          <ul id="imgholder" class="imgs">
-            <li>
-              <div>
-                <img src="../img/wallpaper/airplane_sunset.png" />
-              </div>
-              <div class="catchphrase">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000" style="position: relative;">
+              <img
+                src="../img/wallpaper/airplane_sunset.png"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="slideText">
                 <p>남는건 사진밖에 없어요.</p>
                 <strong class="MEMORAVEL">MEMORAVEL </strong>으로 여행계획을 세우고</strong>
                 <p>잊히지 않을 기억을 남겨 보세요.</p>
-                <button type="button" class="btn btn-dark">시작하기</button>
+                <button type="button" class="slideBtn">시작하기</button>
               </div>
-            </li>
-            <li>
-              <div>
-                <img src="../img/wallpaper/toy.png" />
-              </div>
-              <div class="catchphrase">
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+              <img
+                src="../img/wallpaper/toy.png"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="slideText">
                 <p>이웃들의 <strong class="MEMORAVEL">MEMORY</strong>를 들여다 보고</p>
                 <p>다음 여행에 대한 힌트를 얻으세요.</p>
-                <button type="button" class="btn btn-dark">시작하기</button>
+                <button type="button" class="slideBtn">시작하기</button>
               </div>
-              
-            </li>
-            <li>
-              <div>
-                <img src="../img/wallpaper/4k.png" />
-              </div>
-              <div class="catchphrase">
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+              <img
+                src="../img/wallpaper/4k.png"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="slideText">
                 <p>나의 <strong class="MEMORAVEL">MEMORY</strong>를 이웃들과 공유하고 </p>
                 <p>instagram에 게시하세요.</p>
-                <button type="button" class="btn btn-dark">시작하기</button>
-              </div>
-            </li>
-          </ul>
-          <div class="bullets">
-            <label for="slide1">&nbsp;</label>
-            <label for="slide2">&nbsp;</label>
-            <label for="slide3">&nbsp;</label>
+                <button type="button" class="slideBtn">시작하기</button>
+              </div>  
+            </div>
           </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </section>
     </main>
