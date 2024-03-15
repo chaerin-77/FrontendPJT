@@ -43,8 +43,53 @@ input:focus {
   vertical-align: middle;
 }
 
+/* login modal */
+.member_body {
+  text-align: center;
+  margin: 0 18%;
+}
+
+.member_login_input {
+  border: 1px solid #545454;
+  border-radius: 20px;
+  margin-top: 12%;
+  height: 50px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.member_login_input > input {
+  border: none;
+  display: inline-block;
+  height: 40px;
+}
+
+.member_login_btn {
+  justify-content: space-around;
+  display: flex;
+  margin: 15% 10% 10% 10%;
+}
+
+.member_login_btn1 {
+  border: none;
+  border-radius: 15px;
+  background-color: #ff914d;
+  color: white;
+  padding: 5% 8%;
+}
+
+.member_login_btn2 {
+  border: 1px solid #545454;
+  border-radius: 15px;
+  padding: 5% 8%;
+}
+
 /*------------ main -------------*/
 /* slide */
+.wallpaper {
+  margin-top: 30px;
+}
+
 .slideText {
   position: absolute;
   top: 30%;
@@ -70,7 +115,7 @@ input:focus {
 
 /* writedown */
 .writedown {
-  margin: 5% 10%;
+  padding: 5% 10%;
 }
 
 .titletext {
@@ -117,4 +162,31 @@ input:focus {
   background-color: #ff914d;
   border-radius: 30px;
   vertical-align: middle;
+}
+
+.cardshow {
+  padding: 10% 10% 10% 10%;
+}
+
+.card1 {
+  border: none;
+  border-radius: 40px;
+  margin: 10% 3%;
+  padding: 5%;
+  height: 300px;
+  background-image: url("../img/tripp.png");
+  box-shadow: 4px 4px 5px 2px#c0c0c0;
+}
+
+.trip_title {
+  color: white;
+  font-size: 24px;
+  padding-left: 20%;
+}
+
+/* footer */
+.site-footer {
+  background-color: #545454;
+  color: white;
+  padding: 5%;
 }
