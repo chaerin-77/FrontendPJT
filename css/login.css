@@ -1,0 +1,94 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+}
+/* ---------navbar----------- */
+
+.navSearch {
+  align-items: center;
+  display: inline-block;
+  width: 450px;
+  height: 40px;
+  border: 1px solid #545454;
+  border-radius: 30px;
+  padding: 1% 8%;
+  font-size: 16px;
+}
+
+.navSearchText {
+  display: inline-block;
+  border: none;
+  line-height: 16px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.navSearchBtn {
+  background: url("../img/search.png") no-repeat;
+  border: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-left: 50px;
+  vertical-align: middle;
+}
+/* ---------navbar----------- */
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+ul {
+  list-style: none;
+  align-items: center;
+}
+main {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4% 5%;
+
+  box-sizing: border-box;
+  width: 800px;
+  border: none;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20px 20px / 20px 20px;
+  margin: 50px;
+}
+.login-box ul {
+  text-align: center;
+  display: inline-block;
+}
+.login-box input[type="submit"] {
+  background-color: #ff904e;
+  border: none;
+  border-radius: 15px;
+  font-weight: 500;
+  color: aliceblue;
+  align-self: center;
+  padding: 1% 2%;
+}
+.login-box ul li {
+  display: inline-block;
+  margin: 20px;
+}
+li input {
+  height: 40px;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: none;
+  margin-left: 30px;
+}
+
+.login-box ul li label {
+  margin: 10px;
+}
