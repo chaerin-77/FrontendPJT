@@ -1,17 +1,37 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+}
+
 .navSearch {
   align-items: center;
   display: inline-block;
   width: 450px;
   height: 40px;
-  border: 1px solid black;
+  border: 1px solid #545454;
   border-radius: 30px;
-  padding: 1.5% 8%;
-  font-size: 14px;
+  padding: 1% 8%;
+  font-size: 16px;
 }
 
 .navSearchText {
   display: inline-block;
   border: none;
+  line-height: 16px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.navSearchBtn {
+  background: url("../img/search.png") no-repeat;
+  border: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-left: 50px;
+  vertical-align: middle;
 }
 
 /*------------ main -------------*/
@@ -42,7 +62,7 @@ ul.imgs li {
 }
 
 @font-face {
-  font-family: "TmonMonsori";
+  /* font-family: "TmonMonsori"; */
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff")
     format("woff");
   font-weight: normal;
@@ -55,7 +75,7 @@ ul.imgs li .catchphrase {
   top: 40%;
   transform: translate(-50%, -50%);
   font-size: 40px;
-  font-family: "TmonMonsori";
+  /* font-family: "TmonMonsori"; */
   text-align: left;
   color: #fff;
   line-height: 80px;
@@ -75,7 +95,7 @@ ul.imgs li .catchphrase button {
 ul.imgs li .catchphrase .MEMORAVEL {
   color: #ff914d;
   letter-spacing: 5px;
-  font-family: "SBAggroB";
+  /* font-family: "SBAggroB"; */
 }
 
 ul.imgs li:nth-child(2) .catchphrase {
