@@ -131,7 +131,7 @@
     <main class="container">
       <div class="triplist">
         <p class="titletext">지역별 관광 정보</p>
-        <form action="" class="selectoption">
+        <form onsubmit="GetList(event)" class="selectoption">
           <div class="selectDest">
             <select
               name=""
@@ -139,13 +139,13 @@
               style="border: none; margin-left: 10px; color: #545454"
             >
               <option value="" selected>여행지</option>
-              <option value="">서울</option>
-              <option value="">경기도</option>
-              <option value="">강원도</option>
-              <option value="">충청도</option>
-              <option value="">전라도</option>
-              <option value="">경상도</option>
-              <option value="">제주도</option>
+              <option value="서울">서울</option>
+              <option value="경기">경기도</option>
+              <option value="강원">강원도</option>
+              <option value="충청">충청도</option>
+              <option value="전라">전라도</option>
+              <option value="경상">경상도</option>
+              <option value="제주">제주도</option>
             </select>
           </div>
           <div class="selectCategory">
@@ -154,11 +154,11 @@
               id="category"
               style="border: none; margin-left: 10px; color: #545454"
             >
-              <option value="" selected>관광지 타입</option>
-              <option value="">전체</option>
-              <option value="">숙박</option>
-              <option value="">식당</option>
-              <option value="">쇼핑</option>
+              <option value="12" selected>관광지 타입</option>
+              <option value="12">전체</option>
+              <option value="32">숙박</option>
+              <option value="39">식당</option>
+              <option value="38">쇼핑</option>
             </select>
           </div>
           <div class="selectSearch">
@@ -170,12 +170,7 @@
               placeholder="관광지를 검색해보세요"
             />
           </div>
-          <input
-            type="submit"
-            class="selectBtn"
-            onclick="alert('클릭!')"
-            value="검색"
-          />
+          <input type="submit" class="selectBtn" value="검색" />
         </form>
         <br />
         <div class="trip-info">
@@ -341,5 +336,6 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript" src="../js/public_data_api.js"></script>
   </body>
 </html>
