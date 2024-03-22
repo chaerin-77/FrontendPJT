@@ -18,9 +18,12 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav ms-auto me-2">
 				<div class="navSearch">
-					<input type="text" name="" id="" class="navSearchText"
-						placeholder="관광지를 검색해보세요" style="width: 80%" /> <input
-						type="button" class="navSearchBtn" />
+					<form action="/memoravel/search">
+						<input type="hidden" name="action" value="searchByKeyword"/>
+						<input type="text" name="keyword" id="" class="navSearchText"
+							placeholder="관광지를 검색해보세요" style="width: 80%" /> 
+						<input type="submit" class="navSearchBtn" value=""/>
+					</form>
 				</div>
 			</ul>
 			<ul class="navbar-nav ms-auto me-2">

@@ -44,9 +44,8 @@
 					</div>
 					<div class="member_login_btn">
 						<input class="member_login_btn1" type="submit" id="btn-login"
-							value="로그인" /> <input type="button"
-							data-bs-dismiss="modal" aria-label="Close" value="닫기"
-							class="member_login_btn2" />
+							value="로그인" /> <input type="button" data-bs-dismiss="modal"
+							aria-label="Close" value="닫기" class="member_login_btn2" />
 					</div>
 					<div class="find_password">
 						<a href="/forgot-password">아이디 또는 비밀번호를 잊으셨나요?</a>
@@ -84,8 +83,7 @@
 							</p>
 							<p>잊히지 않을 기억을 남겨 보세요.</p>
 							<button type="button" class="slideBtn"
-								onClick="location.href='/triplist.html'">
-								시작하기</button>
+								onClick="location.href='/memoravel/triplist.jsp'">시작하기</button>
 						</div>
 					</div>
 					<div class="carousel-item" data-bs-interval="4000">
@@ -97,8 +95,7 @@
 							</p>
 							<p>다음 여행에 대한 힌트를 얻으세요.</p>
 							<button type="button" class="slideBtn"
-								onClick="location.href='/triplist.html'">
-								시작하기</button>
+								onClick="location.href='/memoravel/triplist.jsp'">시작하기</button>
 						</div>
 					</div>
 					<div class="carousel-item" data-bs-interval="4000">
@@ -110,8 +107,7 @@
 							</p>
 							<p>instagram에 게시하세요.</p>
 							<button type="button" class="slideBtn"
-								onClick="location.href='/triplist.html'">
-								시작하기</button>
+								onClick="location.href='/memoravel/triplist.jsp'">시작하기</button>
 						</div>
 					</div>
 				</div>
@@ -132,11 +128,12 @@
 				<p class="titletext">
 					<b class="MEMORAVEL">여행 기록</b>을 바로 작성해보세요!
 				</p>
-				<form action="" class="selectoption">
+				<form action="/memoravel/trip" class="selectoption">
+					<input type="hidden" name="action" value="plan">
 					<div class="selectDest">
 						<img src="./assets/img/map.png" alt="" width="25px" height="25px"
-							style="margin-top: 10px" /> <select name=""
-							id="dest" style="border: none; margin-left: 10px; color: #545454">
+							style="margin-top: 10px" /> <select name="" id="dest"
+							style="border: none; margin-left: 10px; color: #545454">
 							<option value="" selected>여행지가 어디었나요?</option>
 							<option value="">서울</option>
 							<option value="">경기도</option>
@@ -149,15 +146,14 @@
 					</div>
 					<div class="selectDate">
 						<img src="./assets/img/calendar.png" alt="" width="25px"
-							height="25px" style="margin-top: 10px" /> <input
-							type="text" placeholder="여행일 선택" onfocus="(this.type='date')"
+							height="25px" style="margin-top: 10px" /> <input type="text"
+							placeholder="여행일 선택" onfocus="(this.type='date')"
 							onblur="(this.type='text')"
 							style="border: none; margin-left: 10px; color: #545454" />
 					</div>
 					<div class="selectCategory">
 						<img src="./assets/img/destination.png" alt="" width="25px"
-							height="25px" style="margin-top: 10px" /> <select
-							name="" id=""
+							height="25px" style="margin-top: 10px" /> <select name="" id=""
 							style="border: none; margin-left: 10px; color: #545454">
 							<option value="" selected>관광지 타입 선택</option>
 							<option value="">전체</option>
@@ -166,11 +162,7 @@
 							<option value="">쇼핑</option>
 						</select>
 					</div>
-					<button type="button" class="selectBtn"
-						onClick="location.href='mkplan.html'">
-						<img src="./assets/img/pencil.png" alt="" height="15px" /> <span>여행
-							기록 작성하기</span>
-					</button>
+					<input type="submit" class="selectBtn" value="여행 기록 작성하기"></input>
 				</form>
 			</div>
 			<div class="cardshow">
@@ -179,26 +171,22 @@
 					<div class="col card1">
 						<p class="trip_title">경주</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/triplist.html'">
-							보러가기</button>
+							onClick="location.href='/memoravel/triplist.jsp'">보러가기</button>
 					</div>
 					<div class="col card1">
 						<p class="trip_title">대전</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/triplist.html'">
-							보러가기</button>
+							onClick="location.href='/memoravel/triplist.jsp'">보러가기</button>
 					</div>
 					<div class="col card1">
 						<p class="trip_title">전주</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/triplist.html'">
-							보러가기</button>
+							onClick="location.href='/memoravel/triplist.jsp'">보러가기</button>
 					</div>
 					<div class="col card1">
 						<p class="trip_title">부산</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/triplist.html'">
-							보러가기</button>
+							onClick="location.href='/memoravel/triplist.jsp'">보러가기</button>
 					</div>
 				</div>
 			</div>
