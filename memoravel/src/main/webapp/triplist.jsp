@@ -32,7 +32,7 @@
       style="background-color: white !important"
     >
       <div class="container">
-        <a class="navbar-brand" href="../html/index.html">
+        <a class="navbar-brand" href="/index.html">
           <img
             src="./assets/img/logo.png"
             alt="Logo"
@@ -74,10 +74,10 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../html/login.html">회원가입</a>
+              <a class="nav-link" href="/login.html">회원가입</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../html/mypage.html">마이페이지</a>
+              <a class="nav-link" href="/mypage.html">마이페이지</a>
             </li>
           </ul>
         </div>
@@ -166,6 +166,6 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="../js/public_data_api.js"></script>
+    <script type="text/javascript" src="./assets/js/public_data_api.js"></script>
   </body>
 </html>
