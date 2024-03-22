@@ -4,13 +4,15 @@ public class Member {
 	private String id;
 	private String password;
 	private String name;
+	private String email;
 	
 	public Member() {
 	}
-	public Member(String id, String password, String name) {
+	public Member(String id, String password, String name, String email) {
 		this.id = id;
 		this.password = password;
 		this.name = name;
+		this.email = email;
 	}
 	
 	@Override
@@ -34,5 +36,11 @@ public class Member {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
