@@ -15,4 +15,9 @@ public class AttractionServiceImpl implements AttractionService {
 		int sidoCode = attractionDao.getSidoCode(dest);
 		return attractionDao.getAttractions(sidoCode, keyword, category);
 	}
+
+	@Override
+	public List<Attraction> Inquire(String keyword) throws SQLException {
+		return attractionDao.getAttractions(keyword);
+	}
 }
