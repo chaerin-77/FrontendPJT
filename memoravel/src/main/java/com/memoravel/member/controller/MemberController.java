@@ -46,6 +46,18 @@ public class MemberController extends HttpServlet {
 				request.getRequestDispatcher("/mypage.jsp").forward(request, response);
 				break;
 			}
+			case "mvUpdate":{
+				request.getRequestDispatcher("/update.jsp").forward(request, response);
+				break;
+			}
+			case "update":{
+				update(request,response);
+				break;
+			}
+			case "delete":{
+				delete(request,response);
+				break;
+			}
 			default:
 				throw new IllegalArgumentException("Unexpected value: " + action);
 			}
@@ -56,6 +68,32 @@ public class MemberController extends HttpServlet {
 		}
 	}
 	
+	private void delete(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		String id = request.getParameter("id");
+		System.out.println(id);
+		
+		int cnt = memberService.deleteById(id);
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		response.sendRedirect("/memoravel");
+	}
+
+	private void update(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		String name = request.getParameter("name");
+		String id = request.getParameter("id");
+		String password = request.getParameter("password");
+		String email = request.getParameter("email");
+		Member user = new Member(id, password, name, email);
+		
+		//2. DB에 유저 정보 등록
+		int cnt = memberService.update(user);
+		
+		//3. 등록 성공 시, 메인 페이지 반환
+		response.sendRedirect("/memoravel");
+	}
+
 	private void signin(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		String name = request.getParameter("name");
 		String id = request.getParameter("id");
@@ -78,9 +116,6 @@ public class MemberController extends HttpServlet {
 		
 		//2. 로그아웃 성공 후, 메인 페이지로
 		response.sendRedirect("/memoravel");
-	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 	private void login(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
@@ -118,5 +153,9 @@ public class MemberController extends HttpServlet {
 		else {
 			response.sendRedirect("/memoravel");
 		}
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
 	}
 }

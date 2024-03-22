@@ -21,7 +21,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public int deleteById(int id) throws SQLException {
+	public int deleteById(String id) throws SQLException {
 		return memberDao.deleteById(id);
 	}
 

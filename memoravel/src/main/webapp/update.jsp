@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>MEMORAVEL</title>
-<link rel="stylesheet" href="./assets/css/mypage.css" type="text/css" />
+<link rel="stylesheet" href="./assets/css/update.css" type="text/css" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -32,49 +32,37 @@
 		<section class="container">
 			<div class="writedown">
 				<nav>
-					<a href="#" style="font-weight: bold;">나의 MEMORAVEL</a> 
-					<a href="/memoravel/member?action=mvUpdate">회원 정보 수정</a>
+					<a href="/memoravel/member?action=mvMypage">나의 MEMORAVEL</a> <a
+						href="/memoravel/member?action=mvUpdate"
+						style="font-weight: bold;">회원 정보 수정</a>
 					<div class="nav-underline"></div>
 				</nav>
-				<p class="titletext">
-					나의 <b class="MEMORAVEL">MEMORAVLE</b>
-				</p>
-				<div class="SelectedDate">
-					<img src="./assets/img/calendar.png" alt="" width="25px"
-						height="25px" />
-					<p class="date">2024년 3월 15일</p>
-				</div>
-				<div class="trip-info">
-					<div class="trip-info-line">
-						<div class="trip-info-div">
-							<img src="./assets/img/wallpaper/phone.png" alt="" width="100px"
-								height="100px" />
-							<div class="trip-info-text">
-								<h5>금수복국(해운대본점)</h5>
-								<p>정말 맛있었어요</p>
-							</div>
-						</div>
-						<button class="trip-info-btn">
-							<img src="./assets/img/arrow-right.png" alt="" width="50px"
-								height="50px" />
-						</button>
+				<div style="display: flex;display: flex;
+	flex-direction: column;
+	justify-content: center;">
+					<div class="login-box">
+						<p class="title">회원 정보 수정</p>
+						<form action="/memoravel/member" method="post">
+							<input type="hidden" name="action" value="update">
+							<ul>
+								<li><label for="user-name">이름</label><input type="text"
+									id="user-name" name="name" value="${userInfo.name}" readonly/></li>
+								<li><label for="user-id">아이디</label><input type="text"
+									id="user-id" name="id" value="${userInfo.id}" readonly/></li>
+								<li><label for="user-pwd">비밀번호</label><input
+									type="password" id="user-pwd" name="password" value="${userInfo.password}"/></li>
+								<li><label for="user-pwd-confirm">비밀번호 확인</label><input
+									type="password" id="user-pwd-confirm"/></li>
+								<li ><label for="user-email">이메일</label><input type="email"
+									id="user-email" name="email" value="${userInfo.email}"/></li>
+								<li style="display: block;">
+									<input type="submit" value="회원 정보 수정" style="width: 150px" />
+									<a type="button" class="btn btn-danger" href="/memoravel/member?action=delete&id=${userInfo.id}">회원 탈퇴</a>
+								</li>
+							</ul>
+						</form>
 					</div>
 				</div>
-				<div class="trip-info-line">
-					<div class="trip-info-div">
-						<img src="./assets/img/wallpaper/phone.png" alt="" width="100px"
-							height="100px" />
-						<div class="trip-info-text">
-							<h5>니키아 프리미어 해운대 호텔</h5>
-							<p>호텔이 정말 좋았어요</p>
-						</div>
-					</div>
-					<button class="trip-info-btn">
-						<img src="./assets/img/arrow-right.png" alt="" width="50px"
-							height="50px" />
-					</button>
-				</div>
-			</div>
 			</div>
 		</section>
 	</main>

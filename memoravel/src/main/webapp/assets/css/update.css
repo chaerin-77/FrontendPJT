@@ -1,0 +1,212 @@
+@font-face {
+	font-family: "Pretendard-Regular";
+	src:
+		url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+		format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
+* {
+	font-family: "Pretendard-Regular";
+	font-optical-sizing: auto;
+}
+
+.navSearch {
+	align-items: center;
+	display: inline-block;
+	width: 450px;
+	height: 40px;
+	border: 1px solid #545454;
+	border-radius: 30px;
+	padding: 1% 8%;
+	font-size: 16px;
+}
+
+.navSearchText {
+	display: inline-block;
+	border: none;
+	line-height: 16px;
+	vertical-align: middle;
+}
+
+input:focus {
+	outline: none;
+}
+
+.navSearchBtn {
+	background: url("../img/search.png") no-repeat;
+	border: none;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin-left: 50px;
+	vertical-align: middle;
+}
+
+/* login modal */
+.member_body {
+	text-align: center;
+	margin: 0 18%;
+}
+
+.member_login_input {
+	border: 1px solid #545454;
+	border-radius: 20px;
+	margin-top: 12%;
+	height: 50px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.member_login_input>input {
+	border: none;
+	display: inline-block;
+	height: 40px;
+}
+
+.member_login_btn {
+	justify-content: space-around;
+	display: flex;
+	margin: 15% 10% 10% 10%;
+}
+
+.member_login_btn1 {
+	border: none;
+	border-radius: 15px;
+	background-color: #ff914d;
+	color: white;
+	padding: 5% 8%;
+}
+
+.member_login_btn2 {
+	border: 1px solid #545454;
+	border-radius: 15px;
+	padding: 5% 8%;
+}
+
+/*------------ main -------------*/
+/* slide */
+.MEMORAVEL {
+	color: #ff914d;
+}
+
+:root {
+	--nav-length: 2;
+	--nav-width: calc(35%/ var(--nav-length));
+}
+
+nav {
+	position: relative;
+	display: flex;
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+nav a {
+	display: block;
+	width: var(--nav-width);
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+}
+
+nav a:hover {
+	color: #ff914d;
+}
+
+.nav-underline {
+	position: absolute;
+	left: calc(var(--nav-width)* 1);
+	bottom: -2px;
+	width: var(--nav-width);
+	height: 2px;
+	background: #333;
+	transition: all .3s ease-in-out;
+}
+
+nav a:nth-child(1).is-current ~ .nav-underline {
+	left: calc(var(--nav-width)* 0);
+}
+
+nav a:nth-child(2).is-current ~ .nav-underline {
+	left: calc(var(--nav-width)* 1);
+}
+
+nav a:nth-child(1):hover ~ .nav-underline {
+	left: calc(var(--nav-width)* 0);
+}
+
+nav a:nth-child(2):hover ~ .nav-underline {
+	left: calc(var(--nav-width)* 1);
+}
+
+.writedown {
+	margin-top: 100px;
+	padding: 5% 10%;
+}
+
+.title {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 5%;
+}
+
+ul {
+	list-style: none;
+	align-items: center;
+}
+
+.login-box {
+	padding: 4% 5%;
+	box-sizing: border-box;
+	width: 800px;
+	border: none;
+	box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 20px;
+	margin: 0 auto;
+}
+
+.login-box ul {
+	text-align: center;
+	display: inline-block;
+}
+
+.login-box input[type="submit"] {
+	background-color: #ff904e;
+	border: none;
+	border-radius: 8px;
+	font-weight: 500;
+	color: aliceblue;
+	align-self: center;
+	padding: 1% 1%;
+	text-align: center;
+	margin-right: 20px;
+}
+
+.login-box ul li {
+	display: inline-block;
+	margin: 20px;
+	text-align: center;
+	align-items: center;
+}
+
+.login-box li input {
+	height: 40px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	border: none;
+	margin-left: 30px;
+}
+
+.login-box ul li label {
+	margin: 10px;
+}
+
+/* footer */
+.site-footer {
+	background-color: #545454;
+	color: white;
+	padding: 5%;
+}

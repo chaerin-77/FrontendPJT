@@ -17,7 +17,7 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public Member login(Member loginInfo) throws SQLException {
 		//1. 쿼리 작성
-		String sql = "select id, name\r\n"
+		String sql = "select *\r\n"
 				+ "from member\r\n"
 				+ "where id=? and password=?";
 		
@@ -39,6 +39,8 @@ public class MemberDaoImpl implements MemberDao {
 				Member member = new Member();
 				member.setId(rs.getString("id"));
 				member.setName(rs.getString("name"));
+				member.setPassword(rs.getString("password"));
+				member.setEmail(rs.getString("email"));
 				return member;
 			}
 			return null;
@@ -73,13 +75,45 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 	@Override
-	public int deleteById(int id) throws SQLException {
-		return 0;
+	public int deleteById(String id) throws SQLException {
+		String sql = "delete from member\r\n"
+				+ "where id=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = dbUtil.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			return pstmt.executeUpdate();
+			
+		} finally {
+			if(pstmt!=null) pstmt.close();
+			if(conn!=null) conn.close();
+		}
 	}
 
 	@Override
 	public int update(Member loginInfo) throws SQLException {
-		return 0;
+		String sql = "update member\r\n"
+				+ "set name=?, password=?, email=?\r\n"
+				+ "where id=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = dbUtil.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, loginInfo.getName());
+			pstmt.setString(2, loginInfo.getPassword());
+			pstmt.setString(3, loginInfo.getEmail());
+			pstmt.setString(4, loginInfo.getId());
+			
+			return pstmt.executeUpdate();
+		} finally {
+			if(pstmt!=null) pstmt.close();
+			if(conn!=null) conn.close();
+		}
 	}
 
 	@Override
