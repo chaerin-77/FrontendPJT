@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!-- navbar -->
+<header
+	class="navbar navbar-expand-md shadow bg-light navbar-light fixed-top"
+	style="background-color: white !important">
+	<div class="container">
+		<a class="navbar-brand" href="/index.html"> <img
+			src="./assets/img/logo.png" alt="Logo" height="60"
+			class="d-inline-block" />
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+			data-bs-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav ms-auto me-2">
+				<div class="navSearch">
+					<input type="text" name="" id="" class="navSearchText"
+						placeholder="관광지를 검색해보세요" style="width: 80%" /> <input
+						type="button" class="navSearchBtn" />
+				</div>
+			</ul>
+			<ul class="navbar-nav ms-auto me-2">
+				<li class="nav-item"><a class="nav-link" type="button"
+					data-bs-toggle="modal" data-bs-target="#exampleModal">로그인</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/login.html">회원가입</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/mypage.html">마이페이지</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>

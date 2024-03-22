@@ -5,79 +5,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MEMORAVEL</title>
-    <link rel="stylesheet" href="./assets/css/mkplan.css" type="text/css"/>
+    <link rel="stylesheet" href="./assets/css/index.css" type="text/css"/>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
     <!-- navbar -->
-    <header
-      class="navbar navbar-expand-md shadow bg-light navbar-light fixed"
-      style="background-color: white !important"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="../html/index.html">
-          <img
-            src="./assets/img/logo.png"
-            alt="Logo"
-            height="60"
-            class="d-inline-block"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapsibleNavbar"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav ms-auto me-2">
-            <div class="navSearch">
-              <input
-                type="text"
-                name=""
-                id=""
-                class="navSearchText"
-                placeholder="관광지를 검색해보세요"
-                style="width: 80%"
-              />
-              <input type="button" class="navSearchBtn" />
-            </div>
-          </ul>
-          <ul class="navbar-nav ms-auto me-2">
-            <li class="nav-item">
-              <a class="nav-link" href="#">로그인</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login.html">회원가입</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/mypage.html">마이페이지</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
+    <%@ include file="/nav.jsp" %>
     <main>
       <section class="container">
         <div class="writedown">
@@ -136,7 +86,7 @@
           <div id="map" style="width: 600px; height: 500px"></div>
           <script
             type="text/javascript"
-            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=29ddff9836b54bb228eadc5857ca78a3"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f7bff4e8045801a595a9f8f93c55fa30"
           ></script>
           <script>
             var container = document.getElementById("map");
