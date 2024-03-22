@@ -28,7 +28,7 @@
 					<c:when test="${empty userInfo}">
 						<li class="nav-item"><a class="nav-link" type="button"
 							data-bs-toggle="modal" data-bs-target="#exampleModal">로그인</a></li>
-						<li class="nav-item"><a class="nav-link" href="/memoravel/member?action=signin">회원가입</a>
+						<li class="nav-item"><a class="nav-link" href="/memoravel/member?action=mvSignin">회원가입</a>
 						</li>
 					</c:when>
 					<c:otherwise>

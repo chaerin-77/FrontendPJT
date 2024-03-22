@@ -26,8 +26,12 @@ public class MemberController extends HttpServlet {
 		
 		try {
 			switch (action) {
-			case "mvLogin":{
-				request.getRequestDispatcher("/login.jsp").forward(request, response);
+			case "mvSignin":{
+				request.getRequestDispatcher("/signin.jsp").forward(request, response);
+				break;
+			}
+			case "signin":{
+				signin(request, response);
 				break;
 			}
 			case "login": {
@@ -48,6 +52,20 @@ public class MemberController extends HttpServlet {
 		}
 	}
 	
+	private void signin(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		String name = request.getParameter("name");
+		String id = request.getParameter("id");
+		String password = request.getParameter("password");
+		String email = request.getParameter("email");
+		Member user = new Member(name, id, password, email);
+		
+		//2. DB에 유저 정보 등록
+		int cnt = memberService.signin(user);
+		
+		//3. 등록 성공 시, 메인 페이지 반환
+		response.sendRedirect("/memoravel");
+	}
+
 	private void logout(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
 		System.out.println("로그아웃 요청 수신");
 		//1. 세션 만료 시키기 
@@ -55,7 +73,7 @@ public class MemberController extends HttpServlet {
 		session.invalidate();
 		
 		//2. 로그아웃 성공 후, 메인 페이지로
-		response.sendRedirect("/bookcafe");
+		response.sendRedirect("/memoravel");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
@@ -66,7 +84,8 @@ public class MemberController extends HttpServlet {
 		//1. 아이디, 비밀번호 정보 추출 및 가공
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
-		Member loginInfo = new Member(id, password, null);
+		Member loginInfo = new Member(id, password, null, null);
+		System.out.println(loginInfo);
 		
 		//2. DB에서 해당 아이디,비번과 일치하는 유저정보 조회
 		Member userInfo = memberService.login(loginInfo);
@@ -79,7 +98,7 @@ public class MemberController extends HttpServlet {
 			String isRemember = request.getParameter("isRemember");
 			System.out.println("아이디 저장 여부: "+isRemember);
 			Cookie cookie = new Cookie("userId", id);
-			cookie.setPath("/bookcafe");
+			cookie.setPath("/memoravel");
 			if(isRemember!=null) cookie.setMaxAge(60*60*2);	//2시간
 			else cookie.setMaxAge(0);
 			response.addCookie(cookie);
@@ -89,11 +108,11 @@ public class MemberController extends HttpServlet {
 			session.setAttribute("userInfo", userInfo);
 			
 			//메인 페이지 이동
-			response.sendRedirect("/bookcafe");
+			response.sendRedirect("/memoravel");
 		}
 		//3-2. 유저정보 존재하지 않는 경우 다시 로그인 페이지 반환
 		else {
-			response.sendRedirect("/bookcafe/member?action=mvLogin");
+			response.sendRedirect("/memoravel");
 		}
 	}
 }

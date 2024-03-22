@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import com.memoravel.member.dto.Member;
 import com.memoravel.util.DBUtil;
 
-public class MemberDaoImpl_close implements MemberDao {
+public class MemberDaoImpl implements MemberDao {
 	private DBUtil dbUtil = DBUtil.getInstance();
 
 	/**
@@ -49,4 +49,43 @@ public class MemberDaoImpl_close implements MemberDao {
 			if(conn!=null) conn.close();
 		}
 	}
+
+	@Override
+	public int signin(Member signinInfo) throws SQLException {
+		String sql = "insert into member\r\n"
+				+ "(name, id, password, email)\r\n"
+				+ "values (?, ?, ?, ?)";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = dbUtil.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, signinInfo.getName());
+			pstmt.setString(2, signinInfo.getId());
+			pstmt.setString(3, signinInfo.getPassword());
+			pstmt.setString(4, signinInfo.getEmail());
+			
+			return pstmt.executeUpdate();
+		} finally {
+			if(pstmt!=null) pstmt.close();
+			if(conn!=null) conn.close();
+		}
+	}
+
+	@Override
+	public int deleteById(int id) throws SQLException {
+		return 0;
+	}
+
+	@Override
+	public int update(Member loginInfo) throws SQLException {
+		return 0;
+	}
+
+	@Override
+	public Member findById(int id) throws SQLException {
+		return null;
+	}
+	
+	
 }
