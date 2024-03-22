@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!-- navbar -->
 <header
 	class="navbar navbar-expand-md shadow bg-light navbar-light fixed-top"
 	style="background-color: white !important">
 	<div class="container">
-		<a class="navbar-brand" href="/index.html"> <img
+		<a class="navbar-brand" href="/memoravel"> <img
 			src="./assets/img/logo.png" alt="Logo" height="60"
 			class="d-inline-block" />
 		</a>
