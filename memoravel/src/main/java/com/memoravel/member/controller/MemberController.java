@@ -42,6 +42,10 @@ public class MemberController extends HttpServlet {
 				logout(request,response);
 				break;
 			}
+			case "mvMypage":{
+				request.getRequestDispatcher("/mypage.jsp").forward(request, response);
+				break;
+			}
 			default:
 				throw new IllegalArgumentException("Unexpected value: " + action);
 			}
@@ -57,7 +61,7 @@ public class MemberController extends HttpServlet {
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		String email = request.getParameter("email");
-		Member user = new Member(name, id, password, email);
+		Member user = new Member(id, password, name, email);
 		
 		//2. DB에 유저 정보 등록
 		int cnt = memberService.signin(user);

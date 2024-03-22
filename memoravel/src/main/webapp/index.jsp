@@ -34,7 +34,7 @@
 					style="margin: 0 auto">로그인</h5>
 			</div>
 			<div class="modal-body member_body">
-				<form action="/memoravel/member">
+				<form action="/memoravel/member" method="post">
 					<input type="hidden" name="action" value="login">
 					<div class="member_login_input">
 						<input type="text" name="id" placeholder="아이디" />

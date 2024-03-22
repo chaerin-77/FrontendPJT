@@ -53,16 +53,16 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public int signin(Member signinInfo) throws SQLException {
 		String sql = "insert into member\r\n"
-				+ "(name, id, password, email)\r\n"
+				+ "(id, password, name, email)\r\n"
 				+ "values (?, ?, ?, ?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
 			conn = dbUtil.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, signinInfo.getName());
-			pstmt.setString(2, signinInfo.getId());
-			pstmt.setString(3, signinInfo.getPassword());
+			pstmt.setString(1, signinInfo.getId());
+			pstmt.setString(2, signinInfo.getPassword());
+			pstmt.setString(3, signinInfo.getName());
 			pstmt.setString(4, signinInfo.getEmail());
 			
 			return pstmt.executeUpdate();

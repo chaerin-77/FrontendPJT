@@ -32,7 +32,7 @@
 						</li>
 					</c:when>
 					<c:otherwise>
-						<li class="nav-item">${userInfo.id}님접속중</li>
+						<li class="nav-item nav-link">${userInfo.name}님 접속중</li>
 						<li class="nav-item"><a class="nav-link" href="/memoravel/member?action=logout">로그아웃</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="/memoravel/member?action=mvMypage">마이페이지</a>
