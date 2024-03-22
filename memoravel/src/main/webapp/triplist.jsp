@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MEMORAVEL</title>
-    <link rel="stylesheet" href="../css/triplist.css" />
+    <link rel="stylesheet" href="./assets/css/triplist.css" type="text/css"/>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -32,7 +34,7 @@
       <div class="container">
         <a class="navbar-brand" href="../html/index.html">
           <img
-            src="../img/logo.png"
+            src="./assets/img/logo.png"
             alt="Logo"
             height="60"
             class="d-inline-block"

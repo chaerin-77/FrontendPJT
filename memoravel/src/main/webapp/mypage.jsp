@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MEMORAVEL</title>
-    <link rel="stylesheet" href="../css/mypage.css" />
+    <link rel="stylesheet" href="./assets/css/mypage.css" type="text/css"/>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -32,7 +34,7 @@
       <div class="container">
         <a class="navbar-brand" href="../html/index.html">
           <img
-            src="../img/logo.png"
+            src="./assets/img/logo.png"
             alt="Logo"
             height="60"
             class="d-inline-block"
@@ -86,14 +88,14 @@
         <div class="writedown">
           <p class="titletext">나의 <b class="MEMORAVEL">MEMORAVLE</b></p>
           <div class="SelectedDate">
-            <img src="../img/calendar.png" alt="" width="25px" height="25px" />
+            <img src="./assets/img/calendar.png" alt="" width="25px" height="25px" />
             <p class="date">2024년 3월 15일</p>
           </div>
           <div class="trip-info">
             <div class="trip-info-line">
               <div class="trip-info-div">
                 <img
-                  src="../img/wallpaper/phone.png"
+                  src="./assets/img/wallpaper/phone.png"
                   alt=""
                   width="100px"
                   height="100px"
@@ -105,7 +107,7 @@
               </div>
               <button class="trip-info-btn">
                 <img
-                  src="../img/arrow-right.png"
+                  src="./assets/img/arrow-right.png"
                   alt=""
                   width="50px"
                   height="50px"
@@ -116,7 +118,7 @@
             <div class="trip-info-line">
               <div class="trip-info-div">
                 <img
-                  src="../img/wallpaper/phone.png"
+                  src="./assets/img/wallpaper/phone.png"
                   alt=""
                   width="100px"
                   height="100px"
@@ -128,7 +130,7 @@
               </div>
               <button class="trip-info-btn">
                 <img
-                  src="../img/arrow-right.png"
+                  src="./assets/img/arrow-right.png"
                   alt=""
                   width="50px"
                   height="50px"

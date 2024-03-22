@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <title>MEMORAVEL</title>
-    <link rel="stylesheet" href="../css/mkplan.css" />
+    <link rel="stylesheet" href="./assets/css/mkplan.css" type="text/css"/>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -33,7 +35,7 @@
       <div class="container">
         <a class="navbar-brand" href="../html/index.html">
           <img
-            src="../img/logo.png"
+            src="./assets/img/logo.png"
             alt="Logo"
             height="60"
             class="d-inline-block"
@@ -67,10 +69,10 @@
               <a class="nav-link" href="#">로그인</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../html/login.html">회원가입</a>
+              <a class="nav-link" href="/login.html">회원가입</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../html/mypage.html">마이페이지</a>
+              <a class="nav-link" href="/mypage.html">마이페이지</a>
             </li>
           </ul>
         </div>
@@ -83,7 +85,7 @@
             <b class="MEMORAVEL">여행 기록</b>을 바로 작성해보세요!
           </p>
           <div class="SelectedDate">
-            <img src="../img/calendar.png" alt="" width="25px" height="25px" />
+            <img src="./assets/img/calendar.png" alt="" width="25px" height="25px" />
             <p class="date">2024년 3월 15일</p>
           </div>
           <form action="" class="selectoption" onsubmit="GetList(event)">
@@ -213,7 +215,7 @@
             class="selectBtn"
             onclick="alert('저장되었습니다.')"
           >
-            <img src="../img/pencil.png" alt="" height="15px" />
+            <img src="./assets/img/pencil.png" alt="" height="15px" />
             <span>여행 기록 작성하기</span>
           </button>
         </div>
@@ -246,6 +248,6 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="../js/public_data_api.js"></script>
+    <script type="text/javascript" src="./assets/js/public_data_api.js"></script>
   </body>
 </html>

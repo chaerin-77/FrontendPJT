@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MEMORAVEL</title>
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" type="text/css"/>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -75,9 +77,9 @@
       style="background-color: white !important"
     >
       <div class="container">
-        <a class="navbar-brand" href="../html/index.html">
+        <a class="navbar-brand" href="index.html">
           <img
-            src="../img/logo.png"
+            src="./assets/img/logo.png"
             alt="Logo"
             height="60"
             class="d-inline-block"
@@ -166,7 +168,7 @@
               style="position: relative"
             >
               <img
-                src="../img/wallpaper/airplane_sunset.png"
+                src="./assets/img/wallpaper/airplane_sunset.png"
                 class="d-block w-100"
                 alt="..."
               />
@@ -177,7 +179,7 @@
                 <button
                   type="button"
                   class="slideBtn"
-                  onClick="location.href='../html/triplist.html'"
+                  onClick="location.href='/triplist.html'"
                 >
                   시작하기
                 </button>
@@ -185,7 +187,7 @@
             </div>
             <div class="carousel-item" data-bs-interval="4000">
               <img
-                src="../img/wallpaper/toy.png"
+                src="./assets/img/wallpaper/toy.png"
                 class="d-block w-100"
                 alt="..."
               />
@@ -195,7 +197,7 @@
                 <button
                   type="button"
                   class="slideBtn"
-                  onClick="location.href='../html/triplist.html'"
+                  onClick="location.href='/triplist.html'"
                 >
                   시작하기
                 </button>
@@ -203,7 +205,7 @@
             </div>
             <div class="carousel-item" data-bs-interval="4000">
               <img
-                src="../img/wallpaper/4k.png"
+                src="./assets/img/wallpaper/4k.png"
                 class="d-block w-100"
                 alt="..."
               />
@@ -213,7 +215,7 @@
                 <button
                   type="button"
                   class="slideBtn"
-                  onClick="location.href='../html/triplist.html'"
+                  onClick="location.href='/triplist.html'"
                 >
                   시작하기
                 </button>
@@ -248,7 +250,7 @@
           <form action="" class="selectoption">
             <div class="selectDest">
               <img
-                src="../img/map.png"
+                src="./assets/img/map.png"
                 alt=""
                 width="25px"
                 height="25px"
@@ -271,7 +273,7 @@
             </div>
             <div class="selectDate">
               <img
-                src="../img/calendar.png"
+                src="./assets/img/calendar.png"
                 alt=""
                 width="25px"
                 height="25px"
@@ -287,7 +289,7 @@
             </div>
             <div class="selectCategory">
               <img
-                src="../img/destination.png"
+                src="./assets/img/destination.png"
                 alt=""
                 width="25px"
                 height="25px"
@@ -310,7 +312,7 @@
               class="selectBtn"
               onClick="location.href='mkplan.html'"
             >
-              <img src="../img/pencil.png" alt="" height="15px" />
+              <img src="./assets/img/pencil.png" alt="" height="15px" />
               <span>여행 기록 작성하기</span>
             </button>
           </form>
@@ -323,7 +325,7 @@
               <button
                 type="button"
                 class="recommendBtn"
-                onClick="location.href='../html/triplist.html'"
+                onClick="location.href='/triplist.html'"
               >
                 보러가기
               </button>
@@ -333,7 +335,7 @@
               <button
                 type="button"
                 class="recommendBtn"
-                onClick="location.href='../html/triplist.html'"
+                onClick="location.href='/triplist.html'"
               >
                 보러가기
               </button>
@@ -343,7 +345,7 @@
               <button
                 type="button"
                 class="recommendBtn"
-                onClick="location.href='../html/triplist.html'"
+                onClick="location.href='/triplist.html'"
               >
                 보러가기
               </button>
@@ -353,7 +355,7 @@
               <button
                 type="button"
                 class="recommendBtn"
-                onClick="location.href='../html/triplist.html'"
+                onClick="location.href='/triplist.html'"
               >
                 보러가기
               </button>
