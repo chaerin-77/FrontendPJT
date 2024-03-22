@@ -28,14 +28,14 @@
 					<c:when test="${empty userInfo}">
 						<li class="nav-item"><a class="nav-link" type="button"
 							data-bs-toggle="modal" data-bs-target="#exampleModal">로그인</a></li>
-						<li class="nav-item"><a class="nav-link" href="/login.html">회원가입</a>
+						<li class="nav-item"><a class="nav-link" href="/memoravel/member?action=signin">회원가입</a>
 						</li>
 					</c:when>
 					<c:otherwise>
 						<li class="nav-item">${userInfo.id}님접속중</li>
-						<li class="nav-item"><a class="nav-link" href="/mypage.html">로그아웃</a>
+						<li class="nav-item"><a class="nav-link" href="/memoravel/member?action=logout">로그아웃</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="/mypage.html">마이페이지</a>
+						<li class="nav-item"><a class="nav-link" href="/memoravel/member?action=mvMypage">마이페이지</a>
 						</li>
 					</c:otherwise>
 				</c:choose>

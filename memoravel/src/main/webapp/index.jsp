@@ -40,7 +40,8 @@
           </h5>
         </div>
         <div class="modal-body member_body">
-          <form action="">
+          <form action="/memoravel/member">
+          <input type="hidden" name="action" value="login"> 
             <div class="member_login_input">
               <input type="text" name="username" placeholder="아이디" />
             </div>

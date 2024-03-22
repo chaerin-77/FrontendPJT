@@ -1,0 +1,99 @@
+package com.memoravel.member.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import com.memoravel.member.dto.Member;
+import com.memoravel.member.model.service.MemberService;
+import com.memoravel.member.model.service.MemberServiceImpl;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+@WebServlet("/member")
+public class MemberController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+	private MemberService memberService = new MemberServiceImpl();
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action = request.getParameter("action");
+		
+		try {
+			switch (action) {
+			case "mvLogin":{
+				request.getRequestDispatcher("/login.jsp").forward(request, response);
+				break;
+			}
+			case "login": {
+				login(request, response);
+				break;
+			}
+			case "logout":{
+				logout(request,response);
+				break;
+			}
+			default:
+				throw new IllegalArgumentException("Unexpected value: " + action);
+			}
+		} catch (Exception e) {
+			//로그 찍던 에러 페이지 반환하던 둘 중 하나!
+			e.printStackTrace();
+			request.getRequestDispatcher("/error.jsp").forward(request, response);
+		}
+	}
+	
+	private void logout(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+		System.out.println("로그아웃 요청 수신");
+		//1. 세션 만료 시키기 
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		//2. 로그아웃 성공 후, 메인 페이지로
+		response.sendRedirect("/bookcafe");
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+	private void login(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+		System.out.println("로그인 요청 수신");
+		//1. 아이디, 비밀번호 정보 추출 및 가공
+		String id = request.getParameter("id");
+		String password = request.getParameter("password");
+		Member loginInfo = new Member(id, password, null);
+		
+		//2. DB에서 해당 아이디,비번과 일치하는 유저정보 조회
+		Member userInfo = memberService.login(loginInfo);
+		System.out.println("로그인한 유저 정보 : \n"+userInfo);
+		
+		//3-1. 유저정보가 정보가 존재한다면 세션에 유저정보 저장
+		if(userInfo!=null) {
+			
+			/////쿠키 사용한 아이디 저장 기능////
+			String isRemember = request.getParameter("isRemember");
+			System.out.println("아이디 저장 여부: "+isRemember);
+			Cookie cookie = new Cookie("userId", id);
+			cookie.setPath("/bookcafe");
+			if(isRemember!=null) cookie.setMaxAge(60*60*2);	//2시간
+			else cookie.setMaxAge(0);
+			response.addCookie(cookie);
+			//////////////////////////////
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("userInfo", userInfo);
+			
+			//메인 페이지 이동
+			response.sendRedirect("/bookcafe");
+		}
+		//3-2. 유저정보 존재하지 않는 경우 다시 로그인 페이지 반환
+		else {
+			response.sendRedirect("/bookcafe/member?action=mvLogin");
+		}
+	}
+}
