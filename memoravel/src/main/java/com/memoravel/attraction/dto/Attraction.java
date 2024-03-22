@@ -15,7 +15,7 @@ public class Attraction {
 	private int gugun_code;
 	private String latitude;
 	private int mlevel;
-	private int longitude;
+	private String longitude;
 	
 
 	public Attraction() {
@@ -24,7 +24,7 @@ public class Attraction {
 
 	public Attraction(String title, int content_id, int content_type_id, String addr1, String addr2, String zipcode,
 			String tel, String first_image, String first_image2, int readcount, int sido_code, int gugun_code,
-			String latitude, int mlevel, int longitude) {
+			String latitude, int mlevel, String longitude) {
 		super();
 		this.title = title;
 		this.content_id = content_id;
@@ -127,10 +127,10 @@ public class Attraction {
 	public void setMlevel(int mlevel) {
 		this.mlevel = mlevel;
 	}
-	public int getLongitude() {
+	public String getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(int longitude) {
+	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
 	
