@@ -16,23 +16,23 @@ public class AttractionDaoImpl implements AttractionDao {
 
 	@Override
 	public int getSidoCode(String dest) throws SQLException {
-		String sql = "select sido_code "
-				+ "from "
-				+ "sido "
-				+ "where 1=1 and "
-				+ "sido_name=?"
-				+ ";";
-		
+		String sql = "select "
+					+ "sido_code " 
+					+ "from "
+					+ "sido " 
+					+ "where 1=1 " 
+					+ "and sido_name=?" 
+					+ ";";
+
 		try (
-				//2. DB 연결
+				// 2. DB 연결
 				Connection conn = dbUtil.getConnection();
-				//3. 쿼리 실행
-				PreparedStatement pstmt = conn.prepareStatement(sql);){
+				// 3. 쿼리 실행
+				PreparedStatement pstmt = conn.prepareStatement(sql);) {
 			pstmt.setString(1, dest);
-			try(
-					ResultSet rs = pstmt.executeQuery();){
-				//4. 조회 데이터 파싱
-				if(rs.next()) {
+			try (ResultSet rs = pstmt.executeQuery();) {
+				// 4. 조회 데이터 파싱
+				if (rs.next()) {
 					int sidoCode = rs.getInt("sido_code");
 					return sidoCode;
 				}
@@ -42,22 +42,25 @@ public class AttractionDaoImpl implements AttractionDao {
 	}
 
 	@Override
-	public List<Attraction> getAttractions(int sidoCode, String keyword, String category) throws SQLException {
+	public List<Attraction> getAttractions(int sidoCode, String keyword, int category) throws SQLException {
 		String sql = "select * "
 				+ "from "
 				+ "attraction_info "
-				+ "where 1=1 and "
-				+ "sido_code=? and "
-				+ "title like ? "
-				+ ";";
+				+ "where 1=1 "
+				+ "and title like ? ";
+		if (sidoCode!=-1) sql += "and sido_code=? ";
+		if (category!=0) sql += "and content_type_id=?";
+		sql += ";";
 		
 		try (
 				//2. DB 연결
 				Connection conn = dbUtil.getConnection();
 				//3. 쿼리 실행
 				PreparedStatement pstmt = conn.prepareStatement(sql);){
-			pstmt.setInt(1, sidoCode);
-			pstmt.setString(2, "%"+keyword+"%");
+			pstmt.setString(1, "%"+keyword+"%");
+			int paramCnt = 1;
+			if (sidoCode!=-1) pstmt.setInt(++paramCnt, sidoCode);
+			if (category!=0)pstmt.setInt(++paramCnt, category);
 			try(
 					ResultSet rs = pstmt.executeQuery();
 					){
@@ -91,27 +94,25 @@ public class AttractionDaoImpl implements AttractionDao {
 
 	@Override
 	public List<Attraction> getAttractions(String keyword) throws SQLException {
-		String sql = "select * "
-				+ "from "
-				+ "attraction_info "
-				+ "where 1=1 and "
-				+ "sido_code=? and "
-				+ "title like ? "
+		String sql = "select "
+				+ "* " 
+				+ "from " 
+				+ "attraction_info " 
+				+ "where 1=1 " 
+				+ "and title like ? " 
 				+ ";";
-		
+
 		try (
-				//2. DB 연결
+				// 2. DB 연결
 				Connection conn = dbUtil.getConnection();
-				//3. 쿼리 실행
-				PreparedStatement pstmt = conn.prepareStatement(sql);){
-			pstmt.setString(1, "%"+keyword+"%");
-			try(
-					ResultSet rs = pstmt.executeQuery();
-					){
-				//4. 조회 데이터 파싱
+				// 3. 쿼리 실행
+				PreparedStatement pstmt = conn.prepareStatement(sql);) {
+			pstmt.setString(1, "%" + keyword + "%");
+			try (ResultSet rs = pstmt.executeQuery();) {
+				// 4. 조회 데이터 파싱
 				List<Attraction> atts = new ArrayList<>();
-				while(rs.next()) {
-					
+				while (rs.next()) {
+
 					int contentId = rs.getInt("content_id");
 					int contentTypeId = rs.getInt("content_type_id");
 					String title = rs.getString("title");
@@ -127,10 +128,11 @@ public class AttractionDaoImpl implements AttractionDao {
 					String latitude = rs.getString("latitude");
 					String longitude = rs.getString("longitude");
 					int mlevel = rs.getInt("mlevel");
-					
-					Attraction att = new Attraction(title, contentId, contentTypeId, addr1, addr2, zipCode, tel, firstImage,firstImage2, readCount, sidoCode, gugunCode, latitude, mlevel, longitude);
+
+					Attraction att = new Attraction(title, contentId, contentTypeId, addr1, addr2, zipCode, tel,
+							firstImage, firstImage2, readCount, sidoCode, gugunCode, latitude, mlevel, longitude);
 					atts.add(att);
-					
+
 				}
 				return atts;
 			}

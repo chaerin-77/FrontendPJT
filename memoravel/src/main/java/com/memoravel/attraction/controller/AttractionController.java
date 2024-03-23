@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 import com.memoravel.attraction.model.service.*;
 
-//@WebServlet("/search")
+@WebServlet("/search")
 public class AttractionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -20,7 +20,6 @@ public class AttractionController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
-		
 		try {
 			switch (action) {
 			case "searchByKeyword":{
@@ -28,6 +27,7 @@ public class AttractionController extends HttpServlet {
 				break;
 			}
 			case "searchByAll": {
+				searchByAll(request, response);
 				break;
 			}
 			default:
@@ -40,10 +40,18 @@ public class AttractionController extends HttpServlet {
 		}
 	}
 
+	private void searchByAll(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+		String dest = request.getParameter("dest");
+		int contentType = Integer.parseInt(request.getParameter("contentType"));
+		String keyword = request.getParameter("keyword");
+		request.setAttribute("attractionList", attractionService.Inquire(dest, keyword, contentType));
+		request.getRequestDispatcher("/mkplan.jsp").forward(request, response);
+		
+	}
+
 	private void searchByKeyword(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
 		String keyword = request.getParameter("keyword");
-		HttpSession session = request.getSession();
-		session.setAttribute("attractionList", attractionService.Inquire(keyword));
+		request.setAttribute("attractionList", attractionService.Inquire(keyword));
 		request.getRequestDispatcher("/triplist.jsp").forward(request, response);
 		
 	}

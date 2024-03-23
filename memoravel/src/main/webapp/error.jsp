@@ -9,6 +9,6 @@
 <body>
 	<h1>오류가 발생했습니다.</h1>
 	
-	<a href="/bookcafe">메인 화면으로 이동</a>
+	<a href="/memoravel">메인 화면으로 이동</a>
 </body>
 </html>

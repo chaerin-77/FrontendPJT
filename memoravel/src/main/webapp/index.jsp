@@ -128,20 +128,30 @@
 				<p class="titletext">
 					<b class="MEMORAVEL">여행 기록</b>을 바로 작성해보세요!
 				</p>
-				<form action="/memoravel/trip" class="selectoption">
-					<input type="hidden" name="action" value="plan">
+				<form action="/memoravel/search" class="selectoption">
+					<input type="hidden" name="action" value="searchByAll">
 					<div class="selectDest">
 						<img src="./assets/img/map.png" alt="" width="25px" height="25px"
-							style="margin-top: 10px" /> <select name="" id="dest"
+							style="margin-top: 10px" /> <select name="dest" id="dest"
 							style="border: none; margin-left: 10px; color: #545454">
 							<option value="" selected>여행지가 어디었나요?</option>
-							<option value="">서울</option>
-							<option value="">경기도</option>
-							<option value="">강원도</option>
-							<option value="">충청도</option>
-							<option value="">전라도</option>
-							<option value="">경상도</option>
-							<option value="">제주도</option>
+							<option value="서울">서울</option>
+							<option value="경기도">경기도</option>
+							<option value="강원도">강원도</option>
+							<option value="충청북도">충청북도</option>
+							<option value="충청남도">충청남도</option>
+							<option value="전라북도">전라북도</option>
+							<option value="전라남도">전라남도</option>
+							<option value="경상북도">경상북도</option>
+							<option value="경상남도">경상남도</option>
+							<option value="제주도">제주도</option>
+							<option value="인천">인천</option>
+							<option value="대전">대전</option>
+							<option value="대구">대구</option>
+							<option value="광주">광주</option>
+							<option value="부산">부산</option>
+							<option value="울산">울산</option>
+							<option value="세종특별자치시">세종</option>
 						</select>
 					</div>
 					<div class="selectDate">
@@ -153,13 +163,18 @@
 					</div>
 					<div class="selectCategory">
 						<img src="./assets/img/destination.png" alt="" width="25px"
-							height="25px" style="margin-top: 10px" /> <select name="" id=""
+							height="25px" style="margin-top: 10px" /> <select name="contentType" id=""
 							style="border: none; margin-left: 10px; color: #545454">
-							<option value="" selected>관광지 타입 선택</option>
-							<option value="">전체</option>
-							<option value="">숙박</option>
-							<option value="">식당</option>
-							<option value="">쇼핑</option>
+							<option value="0" selected>관광지 타입 선택</option>
+							<option value="0">전체</option>
+							<option value="12">관광지</option>
+							<option value="14">문화시설</option>
+							<option value="15">축제/공연/행사</option>
+							<option value="25">여행코스</option>
+							<option value="28">레포츠</option>
+							<option value="32">숙박</option>
+							<option value="39">음식점</option>
+							<option value="38">쇼핑</option>
 						</select>
 					</div>
 					<input type="submit" class="selectBtn" value="여행 기록 작성하기"></input>
