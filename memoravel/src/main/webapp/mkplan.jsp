@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"
-%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -13,19 +12,16 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous"
-/>
+	crossorigin="anonymous" />
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-	crossorigin="anonymous"
-></script>
+	crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
-	rel="stylesheet"
-/>
+	rel="stylesheet" />
 </head>
 <body>
 	<!-- navbar -->
@@ -38,17 +34,14 @@
 				</p>
 				<div class="SelectedDate">
 					<img src="./assets/img/calendar.png" alt="" width="25px"
-						height="25px"
-					/>
+						height="25px" />
 					<p class="date">2024년 3월 15일</p>
 				</div>
-				<form action="/memoravel/search" class="selectoption">
-					<input type="hidden" name="action" value="searchMkplan">
+				<form onsubmit="getAttractionList(event)">
 					<div class="selectDest">
 						<select name="dest" id="dest"
-							style="border: none; margin-left: 10px; color: #545454"
-						>
-							<option value=""  ${empty param.dest?"selected":""}>여행지</option>
+							style="border: none; margin-left: 10px; color: #545454">
+							<option value="" ${empty param.dest?"selected":""}>여행지</option>
 							<option value="서울" ${param.dest=="서울"?"selected":""}>서울</option>
 							<option value="경기도" ${param.dest eq '경기도'?"selected":""}>경기도</option>
 							<option value="강원도" ${param.dest=="강원도"?"selected":""}>강원도</option>
@@ -70,8 +63,7 @@
 					</div>
 					<div class="selectCategory">
 						<select name="contentType" id="category"
-							style="border: none; margin-left: 10px; color: #545454"
-						>
+							style="border: none; margin-left: 10px; color: #545454">
 							<option value="0">관광지 타입</option>
 							<option value="0" ${param.contentType==0?"selected":""}>전체</option>
 							<option value="12" ${param.contentType==12?"selected":""}>관광지</option>
@@ -86,28 +78,16 @@
 					</div>
 					<div class="selectSearch">
 						<input type="text" name="keyword" id="text"
-							class="selectSearchText" placeholder="관광지를 검색해보세요"
-						/>
+							class="selectSearchText" placeholder="관광지를 검색해보세요" />
 					</div>
-					<input type="submit" class="selectBtn" value="검색" />
+					<input type="submit" class="selectBtn" value="검색"/>
 				</form>
 			</div>
 		</section>
 		<section class="container">
 			<div class="kakaomap">
 				<div id="map" style="width: 600px; height: 500px"></div>
-				<script type="text/javascript"
-					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f7bff4e8045801a595a9f8f93c55fa30"
-				></script>
-				<script>
-					var container = document.getElementById("map");
-					var options = {
-						center : new kakao.maps.LatLng(33.450701, 126.570667),
-						level : 3,
-					};
 
-					var map = new kakao.maps.Map(container, options);
-				</script>
 				<div class="list">
 					<div class="trip-info">
 						<c:choose>
@@ -126,14 +106,12 @@
 										<div class="trip-info-div">
 											<c:choose>
 												<c:when test="${attraction.first_image.equals('')}">
-													<img src="${attraction.first_image2}" alt="이미지 없음" width="100px"
-														height="100px"
-													/>
+													<img src="${attraction.first_image2}" alt="이미지 없음"
+														width="100px" height="100px" />
 												</c:when>
 												<c:otherwise>
 													<img src="${attraction.first_image}" alt="" width="100px"
-														height="100px"
-													/>
+														height="100px" />
 												</c:otherwise>
 											</c:choose>
 											<div class="trip-info-text">
@@ -141,11 +119,17 @@
 												<p>${attraction.addr1}</p>
 											</div>
 										</div>
-										<button class="trip-info-btn">
-											<img src="./assets/img/arrow-right.png" alt="" width="50px"
-												height="50px"
-											/>
-										</button>
+										<div>
+											<button class="trip-info-btn">
+												<img src="./assets/img/plus.png" alt="" width="30px"
+													height="30px" />
+											</button>
+											<button class="trip-info-btn"
+												onClick="location.href='/memoravel/search?action=detail&id=${attraction.content_id}'">
+												<img src="./assets/img/arrow-right.png" alt="" width="40px"
+													height="40px" />
+											</button>
+										</div>
 									</div>
 								</c:forEach>
 							</c:otherwise>
@@ -158,13 +142,11 @@
 					<h2 class="accordion-header" id="flush-headingOne">
 						<button class="accordion-button collapsed" type="button"
 							data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-							aria-expanded="false" aria-controls="flush-collapseOne"
-						>금수복국(해운대본점)</button>
+							aria-expanded="false" aria-controls="flush-collapseOne">금수복국(해운대본점)</button>
 					</h2>
 					<div id="flush-collapseOne" class="accordion-collapse collapse"
 						aria-labelledby="flush-headingOne"
-						data-bs-parent="#accordionFlushExample"
-					>
+						data-bs-parent="#accordionFlushExample">
 						<div class="accordion-body">
 							<input type="text" name="" id="" class="wirtein" />
 						</div>
@@ -174,13 +156,12 @@
 					<h2 class="accordion-header" id="flush-headingOne">
 						<button class="accordion-button collapsed" type="button"
 							data-bs-toggle="collapse" data-bs-target="#data2"
-							aria-expanded="false" aria-controls="data2"
-						>베니키아 프리미어 해운대 호텔</button>
+							aria-expanded="false" aria-controls="data2">베니키아 프리미어
+							해운대 호텔</button>
 					</h2>
 					<div id="data2" class="accordion-collapse collapse"
 						aria-labelledby="flush-headingOne"
-						data-bs-parent="#accordionFlushExample"
-					>
+						data-bs-parent="#accordionFlushExample">
 						<div class="accordion-body">
 							<input type="text" name="" id="" class="wirtein" />
 						</div>
@@ -218,6 +199,7 @@
 			</div>
 		</div>
 	</footer>
+	<script src="${pageContext.request.contextPath}/assets/js/search.js"></script>
 	<script type="text/javascript" src="./assets/js/public_data_api.js"></script>
 </body>
 </html>

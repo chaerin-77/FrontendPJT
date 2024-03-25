@@ -1,22 +1,27 @@
 package com.memoravel.attraction.controller;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.memoravel.attraction.dto.Attraction;
+import com.memoravel.attraction.model.service.AttractionService;
+import com.memoravel.attraction.model.service.AttractionServiceImpl;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-
-import java.io.IOException;
-import java.sql.SQLException;
-
-import com.memoravel.attraction.model.service.*;
 
 @WebServlet("/search")
 public class AttractionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	private AttractionService attractionService = new AttractionServiceImpl();
+	
+	private ObjectMapper mapper = new ObjectMapper();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
@@ -44,7 +49,10 @@ public class AttractionController extends HttpServlet {
 		}
 	}
 
-	private void detail(HttpServletRequest request, HttpServletResponse response) {
+	private void detail(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+		int contentId = Integer.parseInt(request.getParameter("id"));
+		request.setAttribute("detail", attractionService.detail(contentId));
+		request.getRequestDispatcher("/detail.jsp").forward(request, response);
 		
 	}
 
@@ -52,9 +60,10 @@ public class AttractionController extends HttpServlet {
 		String dest = request.getParameter("dest");
 		int contentType = Integer.parseInt(request.getParameter("contentType") == null ? "0" : request.getParameter("contentType"));
 		String keyword = request.getParameter("keyword");
-		request.setAttribute("attractionList", attractionService.Inquire(dest, keyword, contentType));
-		request.getRequestDispatcher("/mkplan.jsp").forward(request, response);
 		
+		List<Attraction> attractionList = attractionService.Inquire(dest, keyword, contentType);
+		String jsonString = mapper.writeValueAsString(attractionList);
+		response.getWriter().append(jsonString);
 	}
 
 	private void searchTriplist(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
@@ -67,7 +76,6 @@ public class AttractionController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

@@ -100,7 +100,7 @@
 										<p>${attraction.addr1}</p>
 									</div>
 								</div>
-								<button class="trip-info-btn">
+								<button class="trip-info-btn" onClick="location.href='/memoravel/search?action=detail&id=${attraction.content_id}'">
 									<img src="./assets/img/arrow-right.png" alt="" width="50px"
 										height="50px" />
 								</button>

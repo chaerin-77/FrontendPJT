@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.memoravel.attraction.dto.Attraction;
+import com.memoravel.attraction.dto.AttractionDetail;
 import com.memoravel.attraction.model.dao.*;
 
 public class AttractionServiceImpl implements AttractionService {
@@ -19,5 +20,10 @@ public class AttractionServiceImpl implements AttractionService {
 	@Override
 	public List<Attraction> Inquire(String keyword) throws SQLException {
 		return attractionDao.getAttractions(keyword);
+	}
+
+	@Override
+	public AttractionDetail detail(int contentId) throws SQLException {
+		return attractionDao.detail(contentId);
 	}
 }
