@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.memoravel.attraction.dto.Attraction;
@@ -49,15 +50,15 @@ public class AttractionDaoImpl implements AttractionDao {
 				+ "where 1=1 "
 				+ "and title like ? ";
 		if (sidoCode!=-1) sql += "and sido_code=? ";
-		if (category!=0) sql += "and content_type_id=?";
-		sql += ";";
+		if (category!=0) sql += "and content_type_id=? ";
+		sql += "limit 1000";
 		
 		try (
 				//2. DB 연결
 				Connection conn = dbUtil.getConnection();
 				//3. 쿼리 실행
 				PreparedStatement pstmt = conn.prepareStatement(sql);){
-			pstmt.setString(1, "%"+keyword+"%");
+			pstmt.setString(1, "%"+(keyword==null?"":keyword)+"%");
 			int paramCnt = 1;
 			if (sidoCode!=-1) pstmt.setInt(++paramCnt, sidoCode);
 			if (category!=0)pstmt.setInt(++paramCnt, category);
@@ -100,7 +101,7 @@ public class AttractionDaoImpl implements AttractionDao {
 				+ "attraction_info " 
 				+ "where 1=1 " 
 				+ "and title like ? " 
-				+ ";";
+				+ "limit 1000";
 
 		try (
 				// 2. DB 연결
