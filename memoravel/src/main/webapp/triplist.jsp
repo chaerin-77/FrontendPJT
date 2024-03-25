@@ -72,8 +72,8 @@
 					</select>
 				</div>
 				<div class="selectSearch">
-					<input type="text" name="" id="text" class="selectSearchText"
-						placeholder="관광지를 검색해보세요" />
+					<input type="text" name="keyword" id="text" class="selectSearchText"
+						placeholder=${empty param.keyword?"관광지를 검색해보세요":"param.keyword"} />
 				</div>
 				<input type="submit" class="selectBtn" value="검색" />
 			</form>
