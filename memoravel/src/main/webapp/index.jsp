@@ -184,24 +184,24 @@
 				<p class="titletext" style="margin-bottom: 40px">추천 여행지</p>
 				<div class="row">
 					<div class="col card1">
-						<p class="trip_title">경주</p>
+						<p class="trip_title">광주</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/memoravel/triplist.jsp'">보러가기</button>
+							onClick="location.href='/memoravel/search?action=searchByAll&dest=광주'">보러가기</button>
 					</div>
 					<div class="col card1">
 						<p class="trip_title">대전</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/memoravel/triplist.jsp'">보러가기</button>
+							onClick="location.href='/memoravel/search?action=searchByAll&dest=대전'">보러가기</button>
 					</div>
 					<div class="col card1">
-						<p class="trip_title">전주</p>
+						<p class="trip_title">제주도</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/memoravel/triplist.jsp'">보러가기</button>
+							onClick="location.href='/memoravel/search?action=searchByAll&dest=제주도'">보러가기</button>
 					</div>
 					<div class="col card1">
 						<p class="trip_title">부산</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/memoravel/triplist.jsp'">보러가기</button>
+							onClick="location.href='/memoravel/search?action=searchByAll&dest=부산'">보러가기</button>
 					</div>
 				</div>
 			</div>

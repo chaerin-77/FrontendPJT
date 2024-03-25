@@ -42,7 +42,7 @@ public class AttractionController extends HttpServlet {
 
 	private void searchByAll(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
 		String dest = request.getParameter("dest");
-		int contentType = Integer.parseInt(request.getParameter("contentType"));
+		int contentType = Integer.parseInt(request.getParameter("contentType") == null ? "0" : request.getParameter("contentType"));
 		String keyword = request.getParameter("keyword");
 		request.setAttribute("attractionList", attractionService.Inquire(dest, keyword, contentType));
 		request.getRequestDispatcher("/mkplan.jsp").forward(request, response);
