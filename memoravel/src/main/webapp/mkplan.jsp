@@ -43,45 +43,45 @@
 					<p class="date">2024년 3월 15일</p>
 				</div>
 				<form action="/memoravel/search" class="selectoption">
-					<input type="hidden" name="action" value="searchByAll">
+					<input type="hidden" name="action" value="searchMkplan">
 					<div class="selectDest">
 						<select name="dest" id="dest"
 							style="border: none; margin-left: 10px; color: #545454"
 						>
-							<option value="" selected>여행지</option>
-							<option value="서울">서울</option>
-							<option value="경기도">경기도</option>
-							<option value="강원도">강원도</option>
-							<option value="충청북도">충청북도</option>
-							<option value="충청남도">충청남도</option>
-							<option value="전라북도">전라북도</option>
-							<option value="전라남도">전라남도</option>
-							<option value="경상북도">경상북도</option>
-							<option value="경상남도">경상남도</option>
-							<option value="제주도">제주도</option>
-							<option value="인천">인천</option>
-							<option value="대전">대전</option>
-							<option value="대구">대구</option>
-							<option value="광주">광주</option>
-							<option value="부산">부산</option>
-							<option value="울산">울산</option>
-							<option value="세종특별자치시">세종</option>
+							<option value=""  ${empty param.dest?"selected":""}>여행지</option>
+							<option value="서울" ${param.dest=="서울"?"selected":""}>서울</option>
+							<option value="경기도" ${param.dest eq '경기도'?"selected":""}>경기도</option>
+							<option value="강원도" ${param.dest=="강원도"?"selected":""}>강원도</option>
+							<option value="충청북도" ${param.dest=='충청북도'?"selected":""}>충청북도</option>
+							<option value="충청남도" ${param.dest=="충청남도"?"selected":""}>충청남도</option>
+							<option value="전라북도" ${param.dest=="전라북도"?"selected":""}>전라북도</option>
+							<option value="전라남도" ${param.dest=="전라남도"?"selected":""}>전라남도</option>
+							<option value="경상북도" ${param.dest=="경상북도"?"selected":""}>경상북도</option>
+							<option value="경상남도" ${param.dest=="경상남도"?"selected":""}>경상남도</option>
+							<option value="제주도" ${param.dest=="제주도"?"selected":""}>제주도</option>
+							<option value="인천" ${param.dest=="인천"?"selected":""}>인천</option>
+							<option value="대전" ${param.dest=="대전"?"selected":""}>대전</option>
+							<option value="대구" ${param.dest=="대구"?"selected":""}>대구</option>
+							<option value="광주" ${param.dest=="광주"?"selected":""}>광주</option>
+							<option value="부산" ${param.dest=="부산"?"selected":""}>부산</option>
+							<option value="울산" ${param.dest=="울산"?"selected":""}>울산</option>
+							<option value="세종특별자치시" ${param.dest=="세종특별자치시"?"selected":""}>세종</option>
 						</select>
 					</div>
 					<div class="selectCategory">
 						<select name="contentType" id="category"
 							style="border: none; margin-left: 10px; color: #545454"
 						>
-							<option value="0" selected>관광지 타입</option>
-							<option value="0">전체</option>
-							<option value="12">관광지</option>
-							<option value="14">문화시설</option>
-							<option value="15">축제/공연/행사</option>
-							<option value="25">여행코스</option>
-							<option value="28">레포츠</option>
-							<option value="32">숙박</option>
-							<option value="39">음식점</option>
-							<option value="38">쇼핑</option>
+							<option value="0">관광지 타입</option>
+							<option value="0" ${param.contentType==0?"selected":""}>전체</option>
+							<option value="12" ${param.contentType==12?"selected":""}>관광지</option>
+							<option value="14" ${param.contentType==14?"selected":""}>문화시설</option>
+							<option value="15" ${param.contentType==15?"selected":""}>축제/공연/행사</option>
+							<option value="25" ${param.contentType==25?"selected":""}>여행코스</option>
+							<option value="28" ${param.contentType==28?"selected":""}>레포츠</option>
+							<option value="32" ${param.contentType==32?"selected":""}>숙박</option>
+							<option value="39" ${param.contentType==39?"selected":""}>음식점</option>
+							<option value="38" ${param.contentType==38?"selected":""}>쇼핑</option>
 						</select>
 					</div>
 					<div class="selectSearch">
@@ -111,7 +111,7 @@
 				<div class="list">
 					<div class="trip-info">
 						<c:choose>
-							<c:when test="${attractionList.size()==0}">
+							<c:when test="${empty attractionList}">
 								<div class="trip-info-line">
 									<div class="trip-info-div">
 										<div class="trip-info-text">

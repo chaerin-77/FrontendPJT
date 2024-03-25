@@ -163,7 +163,8 @@
 					</div>
 					<div class="selectCategory">
 						<img src="./assets/img/destination.png" alt="" width="25px"
-							height="25px" style="margin-top: 10px" /> <select name="contentType" id=""
+							height="25px" style="margin-top: 10px" /> <select
+							name="contentType" id=""
 							style="border: none; margin-left: 10px; color: #545454">
 							<option value="0" selected>관광지 타입 선택</option>
 							<option value="0">전체</option>
