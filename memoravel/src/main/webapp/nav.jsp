@@ -19,7 +19,7 @@
 			<ul class="navbar-nav ms-auto me-2">
 				<div class="navSearch">
 					<form action="/memoravel/search">
-						<input type="hidden" name="action" value="searchByKeyword"/>
+						<input type="hidden" name="action" value="searchTriplist"/>
 						<input type="text" name="keyword" id="" class="navSearchText"
 							placeholder="관광지를 검색해보세요" style="width: 80%" /> 
 						<input type="submit" class="navSearchBtn" value=""/>

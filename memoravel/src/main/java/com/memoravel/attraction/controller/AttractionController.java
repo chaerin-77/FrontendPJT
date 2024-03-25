@@ -22,12 +22,16 @@ public class AttractionController extends HttpServlet {
 		String action = request.getParameter("action");
 		try {
 			switch (action) {
-			case "searchByKeyword":{
-				searchByKeyword(request, response);
+			case "searchMkplan":{
+				searchMkplan(request, response);
 				break;
 			}
-			case "searchByAll": {
-				searchByAll(request, response);
+			case "searchTriplist": {
+				searchTriplist(request, response);
+				break;
+			}
+			case "detail": {
+				detail(request, response);
 				break;
 			}
 			default:
@@ -40,7 +44,11 @@ public class AttractionController extends HttpServlet {
 		}
 	}
 
-	private void searchByAll(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+	private void detail(HttpServletRequest request, HttpServletResponse response) {
+		
+	}
+
+	private void searchMkplan(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
 		String dest = request.getParameter("dest");
 		int contentType = Integer.parseInt(request.getParameter("contentType") == null ? "0" : request.getParameter("contentType"));
 		String keyword = request.getParameter("keyword");
@@ -49,16 +57,15 @@ public class AttractionController extends HttpServlet {
 		
 	}
 
-	private void searchByKeyword(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+	private void searchTriplist(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+		String dest = request.getParameter("dest");
+		int contentType = Integer.parseInt(request.getParameter("contentType") == null ? "0" : request.getParameter("contentType"));
 		String keyword = request.getParameter("keyword");
-		request.setAttribute("attractionList", attractionService.Inquire(keyword));
+		request.setAttribute("attractionList", attractionService.Inquire(dest, keyword, contentType));
 		request.getRequestDispatcher("/triplist.jsp").forward(request, response);
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

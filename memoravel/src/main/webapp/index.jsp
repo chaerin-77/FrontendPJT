@@ -129,7 +129,7 @@
 					<b class="MEMORAVEL">여행 기록</b>을 바로 작성해보세요!
 				</p>
 				<form action="/memoravel/search" class="selectoption">
-					<input type="hidden" name="action" value="searchByAll">
+					<input type="hidden" name="action" value="searchMkplan">
 					<div class="selectDest">
 						<img src="./assets/img/map.png" alt="" width="25px" height="25px"
 							style="margin-top: 10px" /> <select name="dest" id="dest"
@@ -186,22 +186,22 @@
 					<div class="col card1">
 						<p class="trip_title">광주</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/memoravel/search?action=searchByAll&dest=광주'">보러가기</button>
+							onClick="location.href='/memoravel/search?action=searchTriplist&dest=광주'">보러가기</button>
 					</div>
 					<div class="col card1">
 						<p class="trip_title">대전</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/memoravel/search?action=searchByAll&dest=대전'">보러가기</button>
+							onClick="location.href='/memoravel/search?action=searchTriplist&dest=대전'">보러가기</button>
 					</div>
 					<div class="col card1">
 						<p class="trip_title">제주도</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/memoravel/search?action=searchByAll&dest=제주도'">보러가기</button>
+							onClick="location.href='/memoravel/search?action=searchTriplist&dest=제주도'">보러가기</button>
 					</div>
 					<div class="col card1">
 						<p class="trip_title">부산</p>
 						<button type="button" class="recommendBtn"
-							onClick="location.href='/memoravel/search?action=searchByAll&dest=부산'">보러가기</button>
+							onClick="location.href='/memoravel/search?action=searchTriplist&dest=부산'">보러가기</button>
 					</div>
 				</div>
 			</div>
